@@ -10,6 +10,7 @@ for (let i = 1; i < 10; i++) {
             deadHole.textContent = deadHole.textContent * 1 + 1;
             if (deadHole.textContent == 10) {
                 setTimeout(alert("Вы победили!"), 1);
+                lostHole.textContent = 0;
                 deadHole.textContent = 0;
             }
         } else {
@@ -17,6 +18,7 @@ for (let i = 1; i < 10; i++) {
             if (lostHole.textContent == 5) {
                 setTimeout(alert("Вы проиграли!"), 10000);
                 lostHole.textContent = 0;
+                deadHole.textContent = 0;
             }
         }
     }

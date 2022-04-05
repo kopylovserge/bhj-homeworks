@@ -12,4 +12,7 @@ function closeWin() {
 popupMain.className = "modal modal_active";
 
 close[1].onclick = close[0].onclick = closeWin;
-good.onclick = () => popupSuccess.className = "modal modal_active";
+good.onclick = () => {
+    popupSuccess.className = "modal modal_active";
+    popupMain.className = "modal";
+}

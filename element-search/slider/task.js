@@ -6,26 +6,31 @@ let numImages = 0;
 const left = document.querySelector("div.slider__arrow.slider__arrow_prev");
 const right = document.querySelector("div.slider__arrow.slider__arrow_next");
 
+// function checkIndex(index) {
+//     element = imgAllArr[index];
+//     if (element.className === "slider__item slider__item_active") {
+//         return index;
+//     } else {
+//         return false;
+//     }
+// }
+// right.onclick = () => {
+//     numImages = imgAllArr.findIndex(checkIndex(numImages));
+//     imgAllArr[numImages].className = "slider__item";
+//     numImages = numImages == lenArr - 1 ? 0 : numImages += 1;
+//     imgAllArr[numImages].className = "slider__item slider__item_active";
+// }
+
 right.onclick = () => {
-    if (numImages < lenArr - 1)  {
-        imgAllArr[numImages+1].className = "slider__item slider__item_active";
-        imgAllArr[numImages].className = "slider__item";
-        numImages += 1;
-    } else {
-        numImages = 0;
-        imgAllArr[numImages].className = "slider__item slider__item_active";
-        imgAllArr[lenArr - 1].className = "slider__item";
-    }
+    imgAllArr[numImages].className = "slider__item";
+    numImages = numImages == lenArr - 1 ? 0 : numImages += 1;
+    imgAllArr[numImages].className = "slider__item slider__item_active";
+    
 }
 
 left.onclick = () => {
-    if (numImages != 0)  {
-        imgAllArr[numImages-1].className = "slider__item slider__item_active";
-        imgAllArr[numImages].className = "slider__item";
-        numImages -= 1;
-    } else {
-        numImages = lenArr - 1;
-        imgAllArr[numImages].className = "slider__item slider__item_active";
-        imgAllArr[0].className = "slider__item";
-    }
+    imgAllArr[numImages].className = "slider__item";
+    numImages = numImages == 0 ? lenArr - 1 : numImages -= 1;
+    imgAllArr[numImages].className = "slider__item slider__item_active";
+    
 }

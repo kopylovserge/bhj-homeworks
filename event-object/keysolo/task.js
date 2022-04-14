@@ -25,14 +25,8 @@ class Game {
       При неправильном вводе символа - this.fail();
      */
 
-    // function onKey(e) {
-    //   this.currentSymbol = document.querySelector("span.symbol_current").textContent;
-    //   this.currentSymbol === e.key ? this.success() : this.fail();
-    // }
-
     document.addEventListener('keydown', (e) => {
-      this.currentSymbol = document.querySelector("span.symbol_current").textContent;
-      this.currentSymbol === e.key ? this.success() : this.fail();
+      this.currentSymbol.textContent === e.key ? this.success() : this.fail();
     });
   }
 
